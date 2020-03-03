@@ -5,7 +5,7 @@ T = int(input())
 for tc in range(T):
     N = int(input())
     data = [list(map(int, input().split())) for _ in range(N)]
-    #index와 방번호 맞추기위해 +1
+    #index와 방번호 맞추기위해 +1 and 시작위치가 1일때 index 0에서 판단해야하므로 index 0번째 필수.
     visited = [0]*(N*N+1)
     cnt = 0
     maxCnt = 0
@@ -32,4 +32,5 @@ for tc in range(T):
                 start = i+1
             cnt=0
 
+    # maxCnt+1: 자기자신(방) count에 추가
     print("#{} {} {}".format(tc+1, start, maxCnt+1))

@@ -20,7 +20,6 @@ for tc in range(int(input())):
         r[i] += r[i-1]
     
     minC = N*M
-
     for i in range(0, N-3+1):
         for j in range(i+1, N-2+1):
             #흰색이 아닌 칸 수

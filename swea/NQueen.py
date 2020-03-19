@@ -9,7 +9,7 @@ def check(temp, col):
             
 def DFS(N, row, temp):
     if row == N:
-        rst.append(temp[:])
+        rst.append(temp)
         return
     
     for col in range(N):

@@ -27,4 +27,3 @@ for tc in range(int(input())):
     player2_cnt = [0 for _ in range(10)]
 
     print("#{} {}".format(tc+1, play(player1, player2)))
-    

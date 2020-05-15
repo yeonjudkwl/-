@@ -1,21 +1,17 @@
-def perm(n,k):
+def perm(n,k,sum):
     global result
+    # 가지치기
     if k != n:
-        sum = 0
-        for i in range(k):
-            sum += V[i][arr[i]]
-            if sum > result:
-                return
+        if sum > result:
+            return
     if k == n:
-        sum = 0
-        for i in range(N):
-            sum += V[i][arr[i]]
+        # 최소생산비용
         if sum < result:
             result = sum
     else:
         for i in range(k,n):
             arr[k], arr[i] = arr[i], arr[k]
-            perm(n,k+1)
+            perm(n,k+1,sum+V[k][arr[k]])
             arr[k], arr[i] = arr[i], arr[k]
 
 import sys
@@ -27,5 +23,5 @@ for tc in range(int(input())):
     arr = list(range(N))
     result = 999999
 
-    perm(N,0)
+    perm(N,0,0)
     print("#{} {}".format(tc+1,result))

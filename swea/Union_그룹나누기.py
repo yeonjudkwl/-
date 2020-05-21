@@ -34,5 +34,7 @@ for tc in range(int(input())):
         x, y = group[2*i], group[2*i+1]
         union(x, y)
     # print(p)
-    
-    print("#{} {}".format(tc+1, len(set(p))-1))
+    p_set = set()
+    for i in range(1, N+1):
+        p_set.add(find_set(i))
+    print("#{} {}".format(tc+1, len(p_set)))

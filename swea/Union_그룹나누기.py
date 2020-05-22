@@ -17,6 +17,7 @@ def union(x,y):
         p[px] = py
         if rank[px] == rank[py]:
             rank[py] += 1
+    # print(p)
 
 import sys
 sys.stdin = open("Union_그룹나누기.txt")
@@ -33,8 +34,11 @@ for tc in range(int(input())):
     for i in range(M):
         x, y = group[2*i], group[2*i+1]
         union(x, y)
-    # print(p)
+
+    # p를 구할 때 뒤에서 부모가 바뀔 경우, 그 앞쪽의 부모도 바꿔줘야 하기에, p_set을 다시 한 번 더 구해야 함. 
+    # print(set(p))
     p_set = set()
     for i in range(1, N+1):
         p_set.add(find_set(i))
+    # print(p_set)
     print("#{} {}".format(tc+1, len(p_set)))

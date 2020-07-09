@@ -23,7 +23,6 @@ def solution(bridge_length, weight, truck_weights):
                 weight = weight - truck_weights[0]
                 # 다리에 진입
                 in_bridge.append((truck_weights.pop(0), current_time + bridge_length))
-    
         
         if not in_bridge and not truck_weights:
             break

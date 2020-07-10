@@ -8,6 +8,7 @@ def find_gcd(w, h):
         a = b 
         b = n
         n = a % b
+        
     return b
     
 
